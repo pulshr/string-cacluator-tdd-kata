@@ -5,7 +5,13 @@ export class StringCalculator {
       let delimiter = /,|\n/;
       if (numbers.startsWith("//")) {
         const parts = numbers.split("\n", 2);
-        delimiter = new RegExp(parts[0][2]);
+        const customDelimiterMatch = parts[0].match(/\[(.*?)\]/);
+        if (customDelimiterMatch) {
+          const customDelimiter = customDelimiterMatch[1].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+          delimiter = new RegExp(customDelimiter);
+        } else {
+          delimiter = new RegExp(parts[0][2].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
+        }
         numbers = parts[1];
       }
   
