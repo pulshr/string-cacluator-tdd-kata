@@ -31,6 +31,12 @@ describe('StringCalculator', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("1\n2,3")).toBe(6);
   });
+
+  //6th Step Test
+  it('should support different delimiters', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("//;\n1;2")).toBe(3);
+  });
   
 
 });
