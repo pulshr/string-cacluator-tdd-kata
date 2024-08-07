@@ -56,5 +56,11 @@ describe('StringCalculator', () => {
     expect(calculator.Add("//[***]\n1***2***3")).toBe(6);
   });  
 
+  //10th Step Test
+  it('should support multiple delimiters with any length', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("//[***][%%]\n1***2%%3")).toBe(6);
+  });  
+
 });
 
