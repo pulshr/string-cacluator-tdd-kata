@@ -13,6 +13,13 @@ describe('StringCalculator', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("1")).toBe(1);
   });
+
+  //3rd Step Test
+  it('should return the sum of two numbers', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("1,2")).toBe(3);
+  });
+  
   
 
 });
