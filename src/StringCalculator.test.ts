@@ -19,8 +19,12 @@ describe('StringCalculator', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("1,2")).toBe(3);
   });
-  
-  
+
+  //4th Step Test
+  it('should return the sum of an unknown amount of numbers', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("1,2,3,4,5")).toBe(15);
+  });
 
 });
 
