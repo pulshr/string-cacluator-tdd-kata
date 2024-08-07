@@ -37,6 +37,12 @@ describe('StringCalculator', () => {
     const calculator = new StringCalculator();
     expect(calculator.Add("//;\n1;2")).toBe(3);
   });
+
+  //7th Step Test
+  it('should throw an exception when negatives are provided', () => {
+    const calculator = new StringCalculator();
+    expect(() => calculator.Add("1,-2,3")).toThrow("negatives not allowed: -2");
+  });
   
 
 });

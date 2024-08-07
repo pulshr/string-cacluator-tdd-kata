@@ -10,6 +10,11 @@ export class StringCalculator {
       }
   
       const numbersArray = numbers.split(delimiter).map(Number);
+      const negatives = numbersArray.filter(num => num < 0);
+      if (negatives.length > 0) {
+        throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
+      }
+  
       return numbersArray.reduce((sum, num) => sum + num, 0);
     }
   }
