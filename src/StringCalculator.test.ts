@@ -44,6 +44,12 @@ describe('StringCalculator', () => {
     expect(() => calculator.Add("1,-2,3")).toThrow("negatives not allowed: -2");
   });
   
+  //8th Step Test
+  it('should ignore numbers greater than 1000', () => {
+    const calculator = new StringCalculator();
+    expect(calculator.Add("2,1001")).toBe(2);
+  });
+  
 
 });
 

@@ -15,7 +15,7 @@ export class StringCalculator {
         throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
       }
   
-      return numbersArray.reduce((sum, num) => sum + num, 0);
+      return numbersArray.filter(num => num <= 1000).reduce((sum, num) => sum + num, 0);
     }
   }
   
